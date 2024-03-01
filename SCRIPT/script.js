@@ -1,28 +1,36 @@
-document.addEventListener("DOMContentLoaded", function() {
 
-    let nomeAluno = document.getElementById("nomeAluno");
-    let sobrenomeAluno = document.getElementById("sobrenomeAluno");
-    let idadeAluno = document.getElementById("idadeAluno");
-    let nota = document.getElementById("nota");
-    let enviarButton = document.getElementById("enviar");
+let nomeAluno = document.getElementById("nomeAluno");
+let sobrenomeAluno = document.getElementById("sobrenomeAluno");
+let idadeAluno = document.getElementById("idadeAluno");
+let nota = document.getElementById("nota");
+let enviarButton = document.getElementById("enviar");
+let cadastrarNovoAluno = document.getElementById("cadastrarNovoAluno")
+let aluno = document.getElementsByClassName("aluno")[0]
 
-    enviarButton.addEventListener("click", function() {
-        class PegandoAlunos {
-            constructor(nome, sobrenome, idade, nota) {
-                this.nome = nome;
-                this.sobrenome = sobrenome;
-                this.idade = idade;
-                this.nota = nota;
-            }
-        }
-
-        let aluno = new PegandoAlunos(nomeAluno.value, sobrenomeAluno.value, idadeAluno.value, nota.value);    
-        createTable(aluno);
-    });
-
+cadastrarNovoAluno.addEventListener("click", function() {
+    aluno.style.display = "block"
 });
 
-function createTable(aluno){
+
+enviarButton.addEventListener("click", function () {
+    class PegandoAlunos {
+        constructor(nome, sobrenome, idade, nota) {
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.idade = idade;
+            this.nota = nota;
+        }
+    }
+
+    let aluno = new PegandoAlunos(nomeAluno.value, sobrenomeAluno.value, idadeAluno.value, nota.value);
+    createTable(aluno);
+});
+
+
+
+
+
+function createTable(aluno) {
     let tabela = document.querySelector("table");
     let linha = document.createElement("tr");
 

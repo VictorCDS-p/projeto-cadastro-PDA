@@ -27,7 +27,13 @@ main {
     padding: 10px;
 }
 
-.aluno, button{
+.aluno{
+    display: none;
+    margin-top: 10px;
+    width: 100px;
+}
+
+button{
     margin-top: 10px;
     width: 100px;
 }
