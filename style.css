@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+table, th, td {
+    border:1px solid black;
+  }
+
+main {
+    padding-left: 50px;
+    padding-top: 30px;
+}
+
+#table {
+    padding-bottom: 200px;
+}
+
+#table, th {
+    padding: 10px;
+}
+
+
+.aluno, .aluno input {
+    padding: 10px;
+}
+
+.aluno, button{
+    margin-top: 10px;
+    width: 100px;
+}
