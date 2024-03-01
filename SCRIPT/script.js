@@ -47,4 +47,11 @@ function createTable(aluno) {
     linha.appendChild(caixaNota);
 
     tabela.appendChild(linha);
+
+    linha.setAttribute("class", "linha")
+    caixaNome.setAttribute("class", "caixa1")
+    caixaIdade.setAttribute("class", "caixa2")
+    caixaNota.setAttribute("class", "caixa3")
+
+  
 }
