@@ -54,7 +54,7 @@ function createTable(aluno) {
         let caixaRemover = document.createElement("td");
         let caixaEditar = document.createElement("td");
 
-        let = botaoRemover = document.createElement("button")
+        let botaoRemover = document.createElement("button")
         botaoRemover.textContent = "Remover";
         botaoRemover.addEventListener("click", function(){
             linha.remove();
@@ -62,7 +62,7 @@ function createTable(aluno) {
         caixaRemover.appendChild(botaoRemover);
 
 
-        let = botaoEditar = document.createElement("button")
+        let botaoEditar = document.createElement("button")
         botaoEditar.textContent = "Editar";
         botaoEditar.addEventListener("click", function(){
             nomeAluno.value = aluno.nome;
@@ -80,7 +80,7 @@ function createTable(aluno) {
 
     
         tabela.appendChild(linha);
-    
+
         linha.setAttribute("class", "linha")
         caixaNome.setAttribute("class", "caixa1")
         caixaIdade.setAttribute("class", "caixa2")
@@ -96,11 +96,7 @@ function createTable(aluno) {
         let pErro = document.createElement("p");
         pErro.innerHTML = "Erro, digite os valores corretos";
         divErro.appendChild(pErro);
-    }
-
-
-
-
-
-  
+    } 
 }
+
+
