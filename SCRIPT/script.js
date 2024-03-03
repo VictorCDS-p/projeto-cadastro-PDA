@@ -2,7 +2,10 @@
 let nomeAluno = document.getElementById("nomeAluno");
 let sobrenomeAluno = document.getElementById("sobrenomeAluno");
 let idadeAluno = document.getElementById("idadeAluno");
-let nota = document.getElementById("nota");
+let nota1 = document.getElementById("nota1");
+let nota2 = document.getElementById("nota2");
+let nota3 = document.getElementById("nota3");
+let media = document.getElementById("media");
 let enviarButton = document.getElementById("enviar");
 let cadastrarNovoAluno = document.getElementById("cadastrarNovoAluno")
 let formAluno = document.getElementsByClassName("aluno")[0]
@@ -13,29 +16,43 @@ cadastrarNovoAluno.addEventListener("click", function() {
 });
 
 
+
 enviarButton.addEventListener("click", function () {
 
+
+    let calculo = mediaCalculo()
+
+
         class PegandoAlunos {
-        constructor(nome, sobrenome, idade, nota) {
+        constructor(nome, sobrenome, idade, nota1, nota2, nota3, media) {
             this.nome = nome;
             this.sobrenome = sobrenome;
             this.idade = idade;
-            this.nota = nota;
+            this.nota1 = nota1;
+            this.nota2 = nota2;
+            this.nota3 = nota3;
+            this.media = calculo;
+
+
         }
     }
 
-    let aluno = new PegandoAlunos(nomeAluno.value, sobrenomeAluno.value, idadeAluno.value, nota.value);
+    let aluno = new PegandoAlunos(nomeAluno.value, sobrenomeAluno.value, idadeAluno.value, nota1.value, nota2.value, nota3.value, media);
     createTable(aluno);
 });
 
+function mediaCalculo(){
+    return (parseInt(nota1.value) + parseInt(nota2.value) + parseInt(nota3.value)) / 3; 
+}
 
 
 
 
-function createTable(aluno) {
+
+function createTable(aluno, calculo) {
     let divErro = document.getElementById("erro");
     divErro.innerHTML = "";
-    if(nomeAluno.value.length > 3 && sobrenomeAluno.value.length > 3 && idadeAluno.value <= 18 && nota.value <= 10){
+    if(nomeAluno.value.length > 3 && sobrenomeAluno.value.length > 3 && idadeAluno.value <= 18 && nota1.value <= 10 && nota2.value <= 10 && nota3.value <= 10){
         let tabela = document.querySelector("table");
         let linha = document.createElement("tr");
     
@@ -47,9 +64,21 @@ function createTable(aluno) {
         caixaIdade.textContent = aluno.idade;
         linha.appendChild(caixaIdade);
     
-        let caixaNota = document.createElement("td");
-        caixaNota.textContent = aluno.nota;
-        linha.appendChild(caixaNota);
+        let caixaNota1 = document.createElement("td");
+        caixaNota1.textContent = aluno.nota1;
+        linha.appendChild(caixaNota1);
+
+        let caixaNota2 = document.createElement("td");
+        caixaNota2.textContent = aluno.nota2;
+        linha.appendChild(caixaNota2);
+
+        let caixaNota3 = document.createElement("td");
+        caixaNota3.textContent = aluno.nota3;
+        linha.appendChild(caixaNota3);
+
+        let media = document.createElement("td");
+        media.textContent = aluno.media;
+        linha.appendChild(media);
 
         let caixaRemover = document.createElement("td");
         let caixaEditar = document.createElement("td");
@@ -68,7 +97,10 @@ function createTable(aluno) {
             nomeAluno.value = aluno.nome;
             sobrenomeAluno.value = aluno.sobrenome;
             idadeAluno.value = aluno.idade;
-            nota.value = aluno.nota;
+            nota1.value = aluno.nota1;
+            nota2.value = aluno.nota2;
+            nota3.value = aluno.nota3;
+            media.value = aluno.calculo;
             formAluno.style.display = "block";
             cadastrarNovoAluno.style.display = "none";
             linha.remove();            
@@ -84,13 +116,20 @@ function createTable(aluno) {
         linha.setAttribute("class", "linha")
         caixaNome.setAttribute("class", "caixa1")
         caixaIdade.setAttribute("class", "caixa2")
-        caixaNota.setAttribute("class", "caixa3")
+        caixaNota1.setAttribute("class", "caixa3")
+        caixaNota2.setAttribute("class", "caixa4")
+        caixaNota3.setAttribute("class", "caixa5")
+        media.setAttribute("class", "caixa6")
+
         cadastrarNovoAluno.style.display = "block"
         formAluno.style.display = "none"
         nomeAluno.value = "";
         sobrenomeAluno.value = "";
         idadeAluno.value = "";
-        nota.value = "";
+        nota1.value = "";
+        nota2.value = "";
+        nota3.value = "";
+
     }else{
         let divErro = document.getElementById("erro")
         let pErro = document.createElement("p");
