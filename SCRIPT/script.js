@@ -5,7 +5,6 @@ let idadeAluno = document.getElementById("idadeAluno");
 let nota1 = document.getElementById("nota1");
 let nota2 = document.getElementById("nota2");
 let nota3 = document.getElementById("nota3");
-let media = document.getElementById("media");
 let enviarButton = document.getElementById("enviar");
 let cadastrarNovoAluno = document.getElementById("cadastrarNovoAluno")
 let formAluno = document.getElementsByClassName("aluno")[0]
@@ -20,7 +19,7 @@ cadastrarNovoAluno.addEventListener("click", function() {
 enviarButton.addEventListener("click", function () {
 
 
-    let calculo = mediaCalculo()
+    let media = mediaCalculo()
 
 
         class PegandoAlunos {
@@ -31,7 +30,7 @@ enviarButton.addEventListener("click", function () {
             this.nota1 = nota1;
             this.nota2 = nota2;
             this.nota3 = nota3;
-            this.media = calculo;
+            this.media = media;
 
 
         }
@@ -42,7 +41,7 @@ enviarButton.addEventListener("click", function () {
 });
 
 function mediaCalculo(){
-    return (parseInt(nota1.value) + parseInt(nota2.value) + parseInt(nota3.value)) / 3; 
+    return ((parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value)) / 3).toFixed(2);
 }
 
 
@@ -52,7 +51,7 @@ function mediaCalculo(){
 function createTable(aluno, calculo) {
     let divErro = document.getElementById("erro");
     divErro.innerHTML = "";
-    if(nomeAluno.value.length > 3 && sobrenomeAluno.value.length > 3 && idadeAluno.value <= 18 && nota1.value <= 10 && nota2.value <= 10 && nota3.value <= 10){
+    if(nomeAluno.value.length > 3 && sobrenomeAluno.value.length > 3 && idadeAluno.value >= 0 && nota1.value <= 10 && nota1.value.trim() !== "" && nota2.value <= 10 && nota2.value.trim() !== "" && nota3.value <= 10 && nota3.value.trim() !== ""){
         let tabela = document.querySelector("table");
         let linha = document.createElement("tr");
     
@@ -100,7 +99,7 @@ function createTable(aluno, calculo) {
             nota1.value = aluno.nota1;
             nota2.value = aluno.nota2;
             nota3.value = aluno.nota3;
-            media.value = aluno.calculo;
+            media.value = aluno.media;
             formAluno.style.display = "block";
             cadastrarNovoAluno.style.display = "none";
             linha.remove();            
@@ -137,5 +136,6 @@ function createTable(aluno, calculo) {
         divErro.appendChild(pErro);
     } 
 }
+
 
 
