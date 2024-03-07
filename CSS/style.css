@@ -6,7 +6,10 @@
 
 
 table, th, td {
-    border:1px solid black;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;    border-collapse: collapse;
+    width: 100%;
   }
 
 main {
@@ -15,6 +18,9 @@ main {
 }
 
 #table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 200px;
 }
 
@@ -23,18 +29,48 @@ main {
 }
 
 
-.aluno, .aluno input {
+.aluno, input {
     padding: 10px;
 }
 
+
 .aluno{
     display: none;
-    margin-top: 10px;
-    width: 100px;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    width: 100%; 
+    font-size: 16px
 }
 
+
 button{
-    margin-top: 10px;
-    width: 100px;
+    padding: 8px 16px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mensagem-erro {
+    color: red;
+    font-size: 20px;
+
 }
 

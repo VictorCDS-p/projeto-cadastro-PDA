@@ -10,7 +10,7 @@ let cadastrarNovoAluno = document.getElementById("cadastrarNovoAluno")
 let formAluno = document.getElementsByClassName("aluno")[0]
 
 cadastrarNovoAluno.addEventListener("click", function() {
-    formAluno.style.display = "block"
+    formAluno.style.display = "flex"
     cadastrarNovoAluno.style.display = "none"
 });
 
@@ -101,7 +101,7 @@ function createTable(aluno, calculo) {
             nota3.value = aluno.nota3;
             media.value = aluno.media;
             formAluno.style.display = "block";
-            cadastrarNovoAluno.style.display = "none";
+            cadastrarNovoAluno.style.display = "flex";
             linha.remove();            
 
         })
@@ -132,7 +132,8 @@ function createTable(aluno, calculo) {
     }else{
         let divErro = document.getElementById("erro")
         let pErro = document.createElement("p");
-        pErro.innerHTML = "Erro, digite os valores corretos";
+        pErro.setAttribute("class", "mensagem-erro");
+        pErro.innerHTML = "Por favor, verifique os valores inseridos. <br>- Certifique-se de que o nome e sobrenome têm pelo menos 3 caracteres. <br>- A idade é um número positivo menor que 100. <br>- As notas estão dentro do intervalo de 0 a 10.";
         divErro.appendChild(pErro);
     } 
 }
