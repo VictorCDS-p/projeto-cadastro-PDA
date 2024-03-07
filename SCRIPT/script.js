@@ -48,7 +48,7 @@ function mediaCalculo(){
 
 
 
-function createTable(aluno, calculo) {
+function createTable(aluno) {
     let divErro = document.getElementById("erro");
     divErro.innerHTML = "";
     if(nomeAluno.value.length > 3 && sobrenomeAluno.value.length > 3 && idadeAluno.value >= 0 && nota1.value <= 10 && nota1.value.trim() !== "" && nota2.value <= 10 && nota2.value.trim() !== "" && nota3.value <= 10 && nota3.value.trim() !== ""){
