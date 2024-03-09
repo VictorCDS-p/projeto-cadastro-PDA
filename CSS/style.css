@@ -1,76 +1,90 @@
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-table, th, td {
-    border: 1px solid #dddddd;
-    padding: 8px;
-    text-align: left;    border-collapse: collapse;
-    width: 100%;
-  }
+/* Estilo da página principal */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
 
 main {
-    padding-left: 50px;
-    padding-top: 30px;
+    padding: 20px;
 }
 
-#table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 200px;
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-#table, th, tr, td{
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
     padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-
-.aluno, input {
-    padding: 10px;
+th {
+    background-color: #f2f2f2;
 }
 
-
-.aluno{
+/* Estilo do formulário */
+.aluno {
     display: none;
     flex-direction: column;
-    padding: 8px;
+    background-color: #f0f0f0;
     border-radius: 5px;
-    box-sizing: border-box; 
-    width: 100%; 
-    font-size: 16px
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.aluno input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
 
-button{
-    padding: 8px 16px;
-    margin: 10px 0;
-    background-color: #007bff;
-    color: white;
+/* Estilo dos botões */
+button {
+    background-color: #4caf50;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
-    
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
-
 
 .cadastro{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .mensagem-erro {
     color: red;
-    font-size: 20px;
-
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
 }
-

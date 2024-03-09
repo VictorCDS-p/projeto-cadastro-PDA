@@ -53,7 +53,7 @@ function mediaCalculo(){
 function createTable(aluno) {
     let divErro = document.getElementById("erro");
     divErro.innerHTML = "";
-    if(nomeAluno.value.length > 2 && sobrenomeAluno.value.length > 3 && idadeAluno.value >= 15 && idadeAluno.value <= 25 && nota1.value <= 10 && nota1.value.trim() !== "" && nota2.value <= 10 && nota2.value.trim() !== "" && nota3.value <= 10 && nota3.value.trim() !== ""){
+    if(nomeAluno.value.length > 2 && sobrenomeAluno.value.length > 2 && idadeAluno.value >= 15 && idadeAluno.value <= 25 && nota1.value <= 10 && nota1.value.trim() !== "" && nota2.value <= 10 && nota2.value.trim() !== "" && nota3.value <= 10 && nota3.value.trim() !== ""){
         let tabela = document.querySelector("table");
         let linha = document.createElement("tr");
     
