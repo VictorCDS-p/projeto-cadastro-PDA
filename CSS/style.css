@@ -91,3 +91,19 @@ button:hover {
     color: #333;
     margin-bottom: 5px;
 }
+
+
+
+
+/* Adicionando regras de mídia queries para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    #table, th{
+        display: block;        
+        align-items: start;
+    }
+
+    #table, tr{
+        display: flex;;
+        flex-direction: column;
+    }
+}
