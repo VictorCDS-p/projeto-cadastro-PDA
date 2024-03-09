@@ -1,14 +1,12 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo da página principal */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #e3e6dd;
 }
 
 main {
@@ -22,7 +20,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Estilo da tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -41,7 +38,6 @@ th {
     background-color: #f2f2f2;
 }
 
-/* Estilo do formulário */
 .aluno {
     display: none;
     flex-direction: column;
@@ -60,7 +56,6 @@ th {
     border-radius: 3px;
 }
 
-/* Estilo dos botões */
 button {
     background-color: #4caf50;
     color: #fff;
@@ -69,6 +64,7 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 button:hover {
@@ -87,4 +83,11 @@ button:hover {
     font-size: 16px;
     text-align: center;
     margin-top: 10px;
+}
+
+.aluno h5 {
+    padding-bottom: 5px;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 5px;
 }
