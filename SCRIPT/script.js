@@ -107,7 +107,6 @@ function createTable(aluno) {
             nota1.value = aluno.nota1;
             nota2.value = aluno.nota2;
             nota3.value = aluno.nota3;
-            media.value = aluno.media;
             formAluno.style.display = "block";
             cadastrarNovoAluno.style.display = "flex";
             linha.remove();            
