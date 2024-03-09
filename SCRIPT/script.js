@@ -53,7 +53,7 @@ function mediaCalculo(){
 function createTable(aluno) {
     let divErro = document.getElementById("erro");
     divErro.innerHTML = "";
-    if(nomeAluno.value.length > 3 && sobrenomeAluno.value.length > 3 && idadeAluno.value >= 0 && nota1.value <= 10 && nota1.value.trim() !== "" && nota2.value <= 10 && nota2.value.trim() !== "" && nota3.value <= 10 && nota3.value.trim() !== ""){
+    if(nomeAluno.value.length > 2 && sobrenomeAluno.value.length > 3 && idadeAluno.value >= 15 && idadeAluno.value <= 25 && nota1.value <= 10 && nota1.value.trim() !== "" && nota2.value <= 10 && nota2.value.trim() !== "" && nota3.value <= 10 && nota3.value.trim() !== ""){
         let tabela = document.querySelector("table");
         let linha = document.createElement("tr");
     
@@ -136,11 +136,16 @@ function createTable(aluno) {
         nota2.value = "";
         nota3.value = "";
 
+        Array.from(tabela.getElementsByTagName("tr"))
+            .slice(1) 
+            .sort((a, b) => a.cells[0].textContent.localeCompare(b.cells[0].textContent))
+            .forEach(row => tabela.appendChild(row));
+
     }else{
         let divErro = document.getElementById("erro")
         let pErro = document.createElement("p");
         pErro.setAttribute("class", "mensagem-erro");
-        pErro.innerHTML = "Por favor, verifique os valores inseridos. <br>- Certifique-se de que o nome e sobrenome têm pelo menos 3 caracteres. <br>- A idade é um número positivo menor que 100. <br>- As notas estão dentro do intervalo de 0 a 10.";
+        pErro.innerHTML = "Por favor, verifique os valores inseridos. <br>- Certifique-se de que o nome e sobrenome têm pelo menos 2 caracteres. <br>- A idade deve estar entre 15 e 25 anos. <br>- As notas devem estar dentro do intervalo de 0 a 10.";
         divErro.appendChild(pErro);
     } 
 }
