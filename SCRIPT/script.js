@@ -8,6 +8,7 @@ let nota3 = document.getElementById("nota3");
 let enviarButton = document.getElementById("enviar");
 let cadastrarNovoAluno = document.getElementById("cadastrarNovoAluno")
 let formAluno = document.getElementsByClassName("aluno")[0]
+let alunosArray = [];
 
 cadastrarNovoAluno.addEventListener("click", function() {
     formAluno.style.display = "flex"
@@ -37,6 +38,7 @@ enviarButton.addEventListener("click", function () {
     }
 
     let aluno = new PegandoAlunos(nomeAluno.value, sobrenomeAluno.value, idadeAluno.value, nota1.value, nota2.value, nota3.value, media);
+    alunosArray.push(aluno);
     createTable(aluno);
 });
 
@@ -85,7 +87,13 @@ function createTable(aluno) {
         let botaoRemover = document.createElement("button")
         botaoRemover.textContent = "Remover";
         botaoRemover.addEventListener("click", function(){
-            linha.remove();
+            // linha.remove();
+            let index = alunosArray.indexOf(aluno);
+            if (index !== -1) {
+                alunosArray.splice(index, 1); 
+                linha.remove();
+            }
+
         });
         caixaRemover.appendChild(botaoRemover);
 
